@@ -37,3 +37,23 @@ button:disabled {
   background-color: #9e9e9e;
   cursor: not-allowed;
 }
+
+.timer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 36px;
+  font-weight: 700;
+  color: slategray;
+}
+
+.value {
+  display: inline-block;
+  margin-right: 5px;
+  color: #f44336;
+}
+
+#datetime-picker {
+  margin: 20px 100px 20px 0;
+}
