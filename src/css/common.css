@@ -18,6 +18,7 @@ img {
 }
 
 button {
+  margin-left: 30px;
   display: inline-block;
   min-width: 120px;
   padding: 8px 16px;
@@ -55,5 +56,35 @@ button:disabled {
 }
 
 #datetime-picker {
-  margin: 20px 100px 20px 0;
+  margin: 20px  0;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  color: darkblue;
+}
+
+.form input {
+  display: inline-block;
+  min-width: 120px;
+  padding: 8px 16px;
+  border: 1px solid #2196f3;
+  border-radius: 8px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2196f3;
 }

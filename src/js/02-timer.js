@@ -3,13 +3,30 @@ import iziToast from 'izitoast';
 
 import 'izitoast/dist/css/iziToast.min.css';
 import 'flatpickr/dist/flatpickr.min.css';
+import { EventNames, Utils } from './misc/utils.js';
 
+/**
+ * Constant for input selector
+ * @type {string}
+ */
 const selector = 'input[type="text"]';
+
+/**
+ * Get the start button
+ * @type {Element}
+ */
 const startBtnRef = document.querySelector('button[data-start]');
 startBtnRef.disabled = true;
 
+/**
+ * Timer
+ * @type {null}
+ */
 let timer = null;
 
+/**
+ * Class for timer
+ */
 class CountdownTimer {
   constructor(selector, targetDate) {
     this.selector = selector;
@@ -37,10 +54,14 @@ class CountdownTimer {
       const seconds = Math.floor((((time % day) % hour) % minute) / second);
       const arrayOfTimes = [days, hours, minutes, seconds];
       arrayOfSpans.forEach((span, i) => (span.textContent = arrayOfTimes[i]));
-    }, 1000);
+    }, Utils.DELAY);
   }
 }
 
+/**
+ * Options for flatpickr
+ * @type {{defaultDate: Date, onClose(*): void, enableTime: boolean, time_24hr: boolean, minuteIncrement: number}}
+ */
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -67,8 +88,15 @@ const options = {
   },
 };
 
-flatpickr(selector, options);
-startBtnRef.addEventListener('click', () => {
+/**
+ * Create flatpickr
+ */
+new flatpickr(selector, options);
+
+/**
+ * Event listener for start button
+ */
+startBtnRef.addEventListener(EventNames.CLICK, () => {
   if (timer) {
     timer.startTimer();
     startBtnRef.disabled = true;
