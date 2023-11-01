@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Promise generator</title>
     
-    <script type="module" crossorigin src="/goit-advancedjs-hw-02/assets/modulepreload-polyfill-ec808ebb.js"></script>
-    <link rel="stylesheet" href="/goit-advancedjs-hw-02/assets/common-03f0e310.css">
+    <script type="module" crossorigin src="/goit-advancedjs-hw-02/assets/03-promises-31f42555.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/utils-b75522e6.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/iziToast.min-5797e206.js">
+    <link rel="stylesheet" href="/goit-advancedjs-hw-02/assets/iziToast-e5212ee8.css">
+    <link rel="stylesheet" href="/goit-advancedjs-hw-02/assets/common-91ccca09.css">
   </head>
   <body>
     <p><a href="index.html">Go back</a></p>
@@ -14,11 +17,11 @@
     <form class="form">
       <label>
         First delay (ms)
-        <input type="number" name="delay" required />
+        <input type="number" name="delay" step="100" required />
       </label>
       <label>
         Delay step (ms)
-        <input type="number" name="step" required />
+        <input type="number" name="step" step="100" required />
       </label>
       <label>
         Amount
