@@ -52,7 +52,9 @@ class CountdownTimer {
       const hours = Math.floor((time % day) / hour);
       const minutes = Math.floor(((time % day) % hour) / minute);
       const seconds = Math.floor((((time % day) % hour) % minute) / second);
-      const arrayOfTimes = [days, hours, minutes, seconds];
+      const arrayOfTimes = [days, hours, minutes, seconds].map(time =>
+        time.toString().padStart(2, '0')
+      );
       arrayOfSpans.forEach((span, i) => (span.textContent = arrayOfTimes[i]));
     }, Utils.DELAY);
   }
